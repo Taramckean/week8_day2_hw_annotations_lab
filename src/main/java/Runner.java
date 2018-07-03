@@ -23,7 +23,7 @@ public class Runner {
     DBHelper.saveOrUpdate(student1);
     Student student2 = new Student("Derek", "Smith", 34, 456, course1);
     DBHelper.saveOrUpdate(student2);
-    Student student3 = new Student("Adri", "Adrison", 28, 567, course5);
+    Student student3 = new Student("Adri", "Adrison", 28, 567, course4);
     DBHelper.saveOrUpdate(student3);
 
 
