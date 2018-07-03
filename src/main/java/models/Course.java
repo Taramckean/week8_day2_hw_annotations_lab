@@ -46,8 +46,7 @@ public class Course {
     public void setLevel(Level level) {
         this.level = level;
     }
-    @OneToMany
-    (mappedBy = "course", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     public List<Student> getStudents() {
         return students;
     }

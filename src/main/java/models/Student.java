@@ -11,16 +11,17 @@ public class Student {
     private String lastName;
     private int age;
     private int enrollmentNumber;
-    private List<Course> courses;
+    private Course course;
 
     public Student(){
 
     }
-    public Student(String firstName, String lastName, int age, int enrollmentNumber){
+    public Student(String firstName, String lastName, int age, int enrollmentNumber, Course course){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.enrollmentNumber = enrollmentNumber;
+        this.course = course;
     }
 
 
@@ -70,12 +71,13 @@ public class Student {
     }
     @ManyToOne
     @JoinColumn(name ="course_id", nullable = false)
-    public List<Course> getCourses() {
-        return courses;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }
+
 
