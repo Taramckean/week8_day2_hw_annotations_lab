@@ -1,18 +1,17 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name ="students")
 public class Student {
-    
+    private int id;
     private String firstName;
     private String lastName;
     private int age;
     private int enrollmentNumber;
+    private List<Course> courses;
 
     public Student(){
 
@@ -24,22 +23,32 @@ public class Student {
         this.enrollmentNumber = enrollmentNumber;
     }
 
+
+
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    @Column(name =)
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
-
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
-
+    @Column(name = "age")
     public int getAge() {
         return age;
     }
-
+    @Column(name = "enrollment_number")
     public int getEnrollmentNumber() {
         return enrollmentNumber;
     }
@@ -58,6 +67,15 @@ public class Student {
 
     public void setEnrollmentNumber(int enrollmentNumber) {
         this.enrollmentNumber = enrollmentNumber;
+    }
+    @ManyToOne
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }
 
